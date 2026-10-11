@@ -1,0 +1,13 @@
+# 시뮬레이션 시간 기준. 편도 1.4 m, 왕복 7 s, 이동 속도 0.4 m/s.
+frame: world
+obstacles:
+  - name: moving_box
+    enabled: true
+    type: box
+    position: [0.0, -0.7, 0.8]
+    size: [0.5, 0.5, 1.6]
+    motion:
+      type: ping_pong
+      end_position: [0.0, 0.7, 0.8]
+      period: 7.0
+      start_time: 4.0

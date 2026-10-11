@@ -1,0 +1,9 @@
+# world 좌표, 단위 m. position은 박스 중심, size는 전체 너비/깊이/높이.
+# 수정 후 launch를 재시작하세요. 전체 비활성화: obstacles: []
+frame: world
+obstacles:
+  - name: center_box
+    enabled: true
+    type: box
+    position: [0.0, 0.0, 0.8]
+    size: [0.5, 0.5, 1.6]

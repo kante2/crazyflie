@@ -21,3 +21,6 @@ rowan
 # crazyflie_sim's trajectory/visualization helpers (visualization/pdf.py) import
 # matplotlib; cheap to include so those paths don't hit the same class of error.
 matplotlib
+
+# 기체별 온라인 DMPC quadratic program solver.
+osqp>=1.0,<2

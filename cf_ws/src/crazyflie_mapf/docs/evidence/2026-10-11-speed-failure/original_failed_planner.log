@@ -1,0 +1,13 @@
+[INFO] [1791712615.196840891] [trajectory_planner]: per-agent DMPC on central PC: 7 robots, 4s horizon, 5Hz replanning
+[INFO] [1791712615.373352061] [trajectory_planner]: trajectory planner: WAITING
+[INFO] [1791712640.394446014] [trajectory_planner]: trajectory planner: BRAKING
+[INFO] [1791712645.710233481] [trajectory_planner]: trajectory planner: SOLVED
+[INFO] [1791712680.705141759] [trajectory_planner]: trajectory planner: BRAKING
+[INFO] [1791712682.817183340] [trajectory_planner]: trajectory planner: SOLVED
+[INFO] [1791712686.480899994] [trajectory_planner]: trajectory planner: BRAKING
+[INFO] [1791712688.442614603] [trajectory_planner]: trajectory planner: SOLVED
+[INFO] [1791712690.310378007] [trajectory_planner]: trajectory planner: BRAKING
+[INFO] [1791712690.793452835] [trajectory_planner]: trajectory planner: SOLVED
+[INFO] [1791712693.479067712] [trajectory_planner]: trajectory planner: BRAKING
+[INFO] [1791712693.858674322] [trajectory_planner]: trajectory planner: SOLVED
+[INFO] [1791712697.119181743] [trajectory_planner]: trajectory planner: UNSAFE

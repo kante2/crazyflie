@@ -1,0 +1,42 @@
+[INFO] [1791712615.708181750] [drone_executor]: fleet executor: cf1, cf2, cf3, cf4, cf5, cf6, cf7, 100 Hz common loop
+[INFO] [1791712616.601581093] [drone_executor]: fleet executor phase: TAKEOFF
+[INFO] [1791712639.572093060] [drone_executor]: fleet executor phase: AIRBORNE
+[WARN] [1791712639.577708320] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712697.111628722] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712699.455757540] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712701.634434271] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712703.645414192] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712705.832946002] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712707.833341851] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712709.839923913] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712711.846392548] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712714.039700215] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712716.229096337] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712718.236472564] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712720.436181496] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712722.627224190] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712724.825688954] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712726.831444115] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712729.034012211] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712731.242312505] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712733.426058535] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712735.437743448] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712737.621538388] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712739.637178585] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712741.654403953] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712743.840525699] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712746.051998369] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712748.236442313] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712750.240660326] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712752.248754543] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712754.451071121] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712756.659493206] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712758.845429961] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712761.041296178] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712763.230838740] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712765.235854695] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712767.435331970] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712769.452140339] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712771.629235178] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712773.645407870] [drone_executor]: fleet braking: planner did not publish a validated trajectory
+[WARN] [1791712775.831697747] [drone_executor]: fleet braking: planner did not publish a validated trajectory

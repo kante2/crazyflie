@@ -1,0 +1,26 @@
+# 이 파일과 같은 config 폴더를 기준으로 상대 경로를 해석한다.
+operation: run               # run: SIL 비행, preview: 이상적 궤적 예측만 표시
+gazebo: true                 # Gazebo는 SIL 위치를 표시하는 시각화 역할
+gazebo_gui: true
+rviz: true
+render_engine: ogre
+software_rendering: true
+world_file: world.sdf
+world_name: mapf
+rviz_config: visualization.rviz
+# 기존 Docker의 firmware Python 바인딩. 네이티브 실행 시 변경한다.
+# 이미 import cffirmware가 되면 빈 문자열로 설정할 수 있다.
+firmware_bindings: /workspace/crazyflie-firmware/build
+
+# SIL 서버에 직접 전달한다. 다른 패키지의 server.yaml을 읽지 않는다.
+sim:
+  backend: np
+  controller: mellinger
+  max_dt: 0.0
+  visualizations:
+    rviz:
+      enabled: true          # TF 발행에도 필요하므로 true 유지
+      max_rate: 100.0
+
+# 같은 PC의 Gazebo 서버·GUI·모델 생성 통신 주소
+gazebo_ip: 127.0.0.1

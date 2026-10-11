@@ -2,11 +2,70 @@
 
 Crazyflie 드론 개발 통합 저장소. Docker로 개발 환경을 통일한다.
 
+## 다중 드론 DMPC 프로젝트
+
+[`crazyflie_mapf`](cf_ws/src/crazyflie_mapf/README.md)는 7대 Crazyflie의 교차 이동과
+정적·예측 가능한 동적 장애물 회피를 실험하는 독립 ROS 2 패키지다.
+중앙 PC에서 기체별 가속도 QP를 풀고 예측 궤적을 교환한다.
+목적지 관리, 궤적 계획, 비행 실행을 분리했으며 연속 시간 충돌 검사,
+명령 만료 검사와 감속 fallback을 포함한다.
+
+- **환경:** Python, ROS 2 Jazzy, NumPy/SciPy, OSQP, Crazyswarm2 SIL, Gazebo Sim, RViz2.
+- **기본 설정:** 4초 예측 구간, 0.2초 간격, 목표 5Hz 재계획, 100Hz 명령 전송.
+- **실험 모드:** 장애물 없음, 정적 박스, 정해진 경로로 왕복하는 동적 박스.
+- **검증 자료:** [회귀 테스트](cf_ws/src/crazyflie_mapf/test/)와
+  [실패 분석 및 연구 문제 기록](cf_ws/src/crazyflie_mapf/docs/research_problem_log.md).
+
+Gazebo는 SIL 위치를 표시한다. 실기체 성능, 실시간 마감, 임의 환경에서의 도달과
+충돌 회피를 보장하지 않는다. PBS 우선순위 탐색은 별도 라이브러리로 보관하며
+현재 DMPC 비행에는 연결하지 않는다.
+
+### 복제 및 실행
+
+```bash
+git clone --recursive https://github.com/kante2/crazyflie.git
+cd crazyflie
+
+# 새로 복제한 소스에 한 번 적용: 실험에서 사용한 SIL TF 발행 속도 제한.
+git -C cf_ws/src/crazyflie-basic/crazyswarm2 apply \
+  "$PWD/docker/patches/crazyswarm2-tf-rate.patch"
+
+docker compose -f docker/compose.yml build basic
+docker compose -f docker/compose.yml up -d basic
+xhost +local:docker
+docker compose -f docker/compose.yml exec basic bash
+```
+
+컨테이너 안에서:
+
+```bash
+cd /workspace/cf_ws
+source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install --packages-up-to crazyflie_mapf
+source install/setup.bash
+
+# 한 번에 하나의 모드만 실행한다.
+ros2 launch crazyflie_mapf no_obstacles.launch.py
+# ros2 launch crazyflie_mapf static_obstacles.launch.py
+# ros2 launch crazyflie_mapf dynamic_obstacles.launch.py
+
+# GUI 없는 SIL 실행
+# ros2 launch crazyflie_mapf dynamic_obstacles.launch.py gazebo:=false rviz:=false
+
+# 회귀 테스트
+python3 -m pytest src/crazyflie_mapf/test -q
+```
+
+TF 패치는 `simulation.yaml`의 `sim.visualizations.rviz.max_rate`를 지원하며,
+물리·제어 적분을 변경하지 않는다. 적용 대상 소스는 서브모듈 커밋으로 고정되어 있다.
+상세 설정과 실행 옵션은 [패키지 README](cf_ws/src/crazyflie_mapf/README.md)를 참고한다.
+
 ## 구성
 
 - [`crazyflie-firmware/`](crazyflie-firmware/) — 드론 펌웨어. [bitcraze/crazyflie-firmware](https://github.com/bitcraze/crazyflie-firmware) git submodule.
 - [`cf_ws/src/crazyflie-basic/`](cf_ws/src/crazyflie-basic/) — 드론 제어용 ROS 2 패키지 (crazyswarm2 기반). [IN-AIR-KR/crazyflie-basic](https://github.com/IN-AIR-KR/crazyflie-basic) git submodule (`master` 추적).
 - [`docker/`](docker/) — 실행 환경 + 편의 스크립트.
+- [`cf_ws/src/crazyflie_mapf/`](cf_ws/src/crazyflie_mapf/) — 다중 드론 DMPC 궤적 계획과 장애물 회피 실험.
 
 ## 사전 준비
 
@@ -18,7 +77,7 @@ Crazyflie 드론 개발 통합 저장소. Docker로 개발 환경을 통일한�
 ## 실행
 
 ```bash
-git clone --recursive https://github.com/IN-AIR-KR/crazyflie.git crazyflie   # 최초 1회
+git clone --recursive https://github.com/kante2/crazyflie.git crazyflie   # 최초 1회
 cd crazyflie
 
 ./docker/build.sh          # 이미지 빌드

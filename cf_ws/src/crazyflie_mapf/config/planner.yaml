@@ -1,0 +1,29 @@
+# 중앙 PC에서 기체별 QP를 계산하고 예측을 교환하는 온라인 DMPC 실험.
+frame: world
+horizon: 4.0
+dt: 0.2
+plan_rate: 5.0
+stream_rate: 100.0
+state_rate: 50.0
+speed: 2.5
+acceleration: 0.65
+deceleration: 0.9
+robot_radius: 0.18
+# 쌍별 안전 타원체의 수평/수직 반축 [m]. 수직축에 downwash 여유를 준다.
+horizontal_separation: 0.52
+vertical_separation: 1.1
+collision_margin: 0.06
+exchange_iterations: 8
+tracking_reset_distance: 0.15
+tracking_reset_velocity: 0.3
+state_timeout: 0.5
+wall_timeout: 3.0
+command_ttl: 0.4
+bounds: [[-4.5, -4.5, 0.2], [4.5, 4.5, 3.5]]
+arrival_radius: 0.10
+arrival_speed: 0.15
+takeoff_height: 1.2
+takeoff_duration: 3.0
+takeoff_timeout: 15.0
+land_height: 0.04
+land_duration: 3.0

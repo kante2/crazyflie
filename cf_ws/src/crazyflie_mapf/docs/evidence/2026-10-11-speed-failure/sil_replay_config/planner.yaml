@@ -1,0 +1,33 @@
+acceleration: 0.75
+arrival_radius: 0.1
+arrival_speed: 0.15
+bounds:
+- - -4.5
+  - -4.5
+  - 0.2
+- - 4.5
+  - 4.5
+  - 3.5
+collision_margin: 0.06
+command_ttl: 0.4
+deceleration: 1.0
+dt: 0.2
+exchange_iterations: 8
+frame: world
+horizon: 4.0
+horizontal_separation: 0.52
+land_duration: 3.0
+land_height: 0.04
+plan_rate: 5.0
+robot_radius: 0.18
+speed: 2.5
+state_rate: 50.0
+state_timeout: 0.5
+stream_rate: 100.0
+takeoff_duration: 3.0
+takeoff_height: 1.2
+takeoff_timeout: 15.0
+tracking_reset_distance: 0.15
+tracking_reset_velocity: 0.3
+vertical_separation: 1.1
+wall_timeout: 3.0

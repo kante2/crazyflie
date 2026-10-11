@@ -1,0 +1,74 @@
+# 기체 주소와 초기 위치. 반경 2.5 m 원 둘레의 7대 SIL 시뮬레이션 예시다.
+fileversion: 3
+
+robots:
+  cf1:
+    enabled: true
+    # Crazyradio 연결 주소(일반적인 IP 주소가 아님).
+    # radio://<동글 번호>/<채널>/<전송 속도>/<기체 주소>
+    uri: "radio://0/80/2M/E7E7E7E7E1"
+    initial_position: [-2.5, 0.0, 0.0]  # world 기준 [x, y, z], 단위 m
+    type: cf21_sim
+
+  cf2:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E2"
+    initial_position: [-1.5587, -1.9546, 0.0]
+    type: cf21_sim
+
+  cf3:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E3"
+    initial_position: [0.5563, -2.4373, 0.0]
+    type: cf21_sim
+
+  cf4:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E4"
+    initial_position: [2.2524, -1.0847, 0.0]
+    type: cf21_sim
+
+  cf5:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E5"
+    initial_position: [2.2524, 1.0847, 0.0]
+    type: cf21_sim
+
+  cf6:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E6"
+    initial_position: [0.5563, 2.4373, 0.0]
+    type: cf21_sim
+
+  cf7:
+    enabled: true
+    uri: "radio://0/80/2M/E7E7E7E7E7"
+    initial_position: [-1.5587, 1.9546, 0.0]
+    type: cf21_sim
+
+# type에 해당하는 공통 기체 설정. 현재는 기존 SIL 실험과 같은 유형이다.
+robot_types:
+  cf21_sim:
+    motion_capture:
+      enabled: false
+      tracking: vendor
+    big_quad: false
+    battery:
+      voltage_warning: 3.8
+      voltage_critical: 3.7
+
+all:
+  reference_frame: world
+  firmware_params:
+    commander:
+      enHighLevel: 1
+    stabilizer:
+      estimator: 2
+      controller: 1
+  firmware_logging:
+    enabled: true
+    default_topics:
+      pose:
+        frequency: 100
+      status:
+        frequency: 1
